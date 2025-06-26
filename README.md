@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# 📺 MiniTube - A YouTube-Inspired Video App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a frontend-only **Mini YouTube Clone** built using **React JS** and styled with **Tailwind CSS** as part of Week 2’s assignment. The project demonstrates reusable components, React hooks, `react-router-dom`, and sessionStorage for data persistence.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Features Implemented
 
-### `npm start`
+### ✅ Core Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Navbar**
+  - App Title: `MiniTube`
+  - Dummy search bar
+  - "Watch Later" button with real-time count (based on sessionStorage)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Home Page (`/`)**
+  - Grid layout of video cards
+  - Each card includes:
+    - Thumbnail image
+    - Video title
+    - Channel name
+    - View count and time posted
+    - ❤️ Like Button (toggles like state)
+    - ➕ Add to Watch Later (saves video to Watch Later page)
 
-### `npm test`
+- **Watch Later Page (`/watch-later`)**
+  - Displays only videos marked “Watch Later”
+  - Reuses the same video card layout
+  - ❌ Button to remove videos from the list
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ⚛️ React Concepts Used
 
-### `npm run build`
+- Functional components only
+- `useState` for:
+  - Liking videos
+  - Tracking Watch Later list
+- `useEffect` used for optional timer (if added)
+- `react-router-dom` for routing (Home & Watch Later)
+- `sessionStorage` to persist likes and saved videos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💾 sessionStorage Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Likes and Watch Later data are stored using `sessionStorage`, so data persists **within a single session**.
+- State resets after full browser reload — as expected (no backend).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧪 Bonus Features (if any)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> *(Include or delete the ones you added)*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- ⏱ Timer tracking “Time spent on the app”
+- 🌓 Optional dark/light mode toggle
+- 🧭 Sidebar with dummy links (Home, Shorts...)
+- 🧠 Feedback messages (e.g., “Added to Watch Later ✅”)
+- 🎨 Hover animations on video cards
+- 📱 Responsive layout via Tailwind CSS utility classes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📁 Folder Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```plaintext
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── VideoCard.jsx
+│   └── Timer.jsx
+├── pages/
+│   ├── Home.jsx
+│   └── WatchLater.jsx
+├── data/
+│   └── dummyVideos.js
+├── App.jsx
+└── index.js
