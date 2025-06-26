@@ -47,19 +47,6 @@ This is a frontend-only **Mini YouTube Clone** built using **React JS** and styl
 
 ---
 
-## 🧪 Bonus Features (if any)
-
-> *(Include or delete the ones you added)*
-
-- ⏱ Timer tracking “Time spent on the app”
-- 🌓 Optional dark/light mode toggle
-- 🧭 Sidebar with dummy links (Home, Shorts...)
-- 🧠 Feedback messages (e.g., “Added to Watch Later ✅”)
-- 🎨 Hover animations on video cards
-- 📱 Responsive layout via Tailwind CSS utility classes
-
----
-
 ## 📁 Folder Structure
 
 ```plaintext

@@ -1,33 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DarkModeToggle from "./DarkModeToggle";
 
-const Navbar = () => {
+const Navbar = ({ watchLaterCount }) => {
   return (
-    <nav className="flex justify-between items-center p-4 bg-gray-900 text-white shadow">
-      {/* Left: Logo */}
-      <Link to="/" className="text-2xl font-bold text-red-500">
-        MiniTube
-      </Link>
-
-      {/* Middle: Search (dummy input) */}
+    <nav className="flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-900 shadow-md dark:text-white transition-colors">
+      <Link to="/" className="text-xl font-bold">MiniTube</Link>
       <input
         type="text"
         placeholder="Search..."
-        className="px-3 py-1 rounded-md text-black w-1/3"
-        disabled
+        className="px-3 py-1 rounded border dark:bg-gray-800 dark:border-gray-600 dark:text-white"
       />
-
-      {/* Right: Watch Later button */}
-      <Link to="/watch-later" className="relative">
-        <button className="bg-red-500 px-4 py-2 rounded text-white hover:bg-red-600">
-          Watch Later
-          <span className="ml-2 bg-white text-red-500 font-bold px-2 py-0.5 rounded-full text-sm">
-            0
-          </span>
-        </button>
-      </Link>
+      <div className="flex items-center gap-4">
+        <DarkModeToggle />
+        <Link to="/watch-later">
+          <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition dark:bg-blue-700 dark:hover:bg-blue-800">
+            Watch Later {watchLaterCount > 0 && <span>({watchLaterCount})</span>}
+          </button>
+        </Link>
+      </div>
     </nav>
   );
 };
 
 export default Navbar;
+

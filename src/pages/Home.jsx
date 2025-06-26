@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { videos } from "../data/dummyVideos";
 import VideoCard from "../components/VideoCard";
 
@@ -14,13 +14,18 @@ const Home = () => {
   });
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">📺 Videos</h1>
+    <div className="p-4 dark:bg-gray-900 min-h-screen transition-colors">
+      <h1 className="text-2xl font-bold mb-4 dark:text-white">📺 Videos</h1>
       <div className="flex flex-wrap gap-6">
         {videos.map((video) => (
           <VideoCard
             key={video.id}
-            video={video}
+            id={video.id}
+            title={video.title}
+            channel={video.channel}
+            views={video.views}
+            time={video.time}
+            thumbnail={video.thumbnail}
             likedVideos={likedVideos}
             setLikedVideos={setLikedVideos}
             watchLater={watchLater}
