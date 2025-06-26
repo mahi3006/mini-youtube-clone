@@ -1,59 +1,72 @@
-# 📺 MiniTube - A YouTube-Inspired Video App
+# 🎥 Mini YouTube Clone
 
-This is a frontend-only **Mini YouTube Clone** built using **React JS** and styled with **Tailwind CSS** as part of Week 2’s assignment. The project demonstrates reusable components, React hooks, `react-router-dom`, and sessionStorage for data persistence.
+This is a **frontend-only YouTube-inspired video app** built using **React JS** and **Tailwind CSS**.
+
+It demonstrates key React concepts like functional components, props, `useState`, `useEffect`, `react-router-dom` for routing, and sessionStorage for persistence — all without a backend.
 
 ---
 
-## 🔧 Features Implemented
+## 🚀 Features Implemented
 
 ### ✅ Core Features
+- **Navbar**:
+  - Site logo/title
+  - Dummy search input
+  - "Watch Later" button showing count
+  - 🌗 Dark/Light mode toggle using Tailwind
 
-- **Navbar**
-  - App Title: `MiniTube`
-  - Dummy search bar
-  - "Watch Later" button with real-time count (based on sessionStorage)
-
-- **Home Page (`/`)**
+- **Home Page (Video Feed)**:
   - Grid layout of video cards
-  - Each card includes:
-    - Thumbnail image
-    - Video title
-    - Channel name
-    - View count and time posted
-    - ❤️ Like Button (toggles like state)
-    - ➕ Add to Watch Later (saves video to Watch Later page)
+  - Each card shows:
+    - Thumbnail (placeholder)
+    - Title, Channel, Views, Time
+    - ❤️ Like button (session-persisted)
+    - ➕ Watch Later button (session-persisted)
 
-- **Watch Later Page (`/watch-later`)**
-  - Displays only videos marked “Watch Later”
-  - Reuses the same video card layout
-  - ❌ Button to remove videos from the list
+- **Watch Later Page**:
+  - Displays only the saved "Watch Later" videos
+  - Option to remove from the list
 
-### ⚛️ React Concepts Used
+- **Timer**:
+  - Live timer that shows time spent on the site using `useEffect` + `setInterval`
 
-- Functional components only
-- `useState` for:
+- **Dark Mode**:
+  - Full-site toggle with Tailwind’s `dark:` classes
+
+---
+
+## 🧠 React Concepts Used
+
+- ✅ Functional components only
+- ✅ Props to pass data into components
+- ✅ `useState` for:
   - Liking videos
-  - Tracking Watch Later list
-- `useEffect` used for optional timer (if added)
-- `react-router-dom` for routing (Home & Watch Later)
-- `sessionStorage` to persist likes and saved videos
+  - Watch Later tracking
+  - Dark/Light mode toggle
+- ✅ `useEffect` with `setInterval` for:
+  - Live timer
+  - Persisting likes/watch later to `sessionStorage`
+- ✅ `react-router-dom` for navigation (`Home` / `Watch Later`)
+- ✅ `sessionStorage` to simulate backend-like persistence
 
 ---
 
-## 💾 sessionStorage Usage
+## 💅 Styling
 
-- Likes and Watch Later data are stored using `sessionStorage`, so data persists **within a single session**.
-- State resets after full browser reload — as expected (no backend).
+- Tailwind CSS for styling, layout, responsiveness, and theming
+- Dark/Light mode with Tailwind’s `dark:` utility classes
+- Button hover effects and card layout
 
 ---
 
-## 📁 Folder Structure
+## 📂 Folder Structure
 
-```plaintext
+```
 src/
 ├── components/
 │   ├── Navbar.jsx
 │   ├── VideoCard.jsx
+│   ├── DarkModeToggle.jsx
 │   └── Timer.jsx
 ├── pages/
 │   ├── Home.jsx
@@ -62,3 +75,38 @@ src/
 │   └── dummyVideos.js
 ├── App.jsx
 └── index.js
+```
+
+---
+
+## 📦 Dummy Data
+
+Dummy data is stored in `dummyVideos.js`. Each video has the following structure:
+
+```js
+{
+  id: 1,
+  title: "React Hooks Explained",
+  channel: "CodeWithYou",
+  views: "1.2M",
+  time: "2 days ago",
+  thumbnail: "https://via.placeholder.com/300x170"
+}
+```
+
+---
+
+## 🔗 Submission Details
+
+- ✅ GitHub Repo Link: [https://github.com/mahi3006/mini-youtube-clone](https://github.com/mahi3006/mini-youtube-clone)
+- ✅ Features demo video: https://drive.google.com/file/d/1hV8f3oH59543scWPgFs8aMarB4YV5gY9/view?usp=sharing
+- ✅ Mentioned: Using **Tailwind CSS**
+
+---
+
+## 🧑‍💻 Author
+
+**Mahitha**  
+© 2025 — MiniTube  
+GitHub: [github.com/mahi3006](https://github.com/mahi3006)
+
